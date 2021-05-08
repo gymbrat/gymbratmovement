@@ -31,7 +31,7 @@
                         <div class="row justify-content-sm-center">
                             <?php foreach($socialmedialinks as $socialmedialink){?>
                                 <?php if($socialmedialink['link'] !== ''){?>
-                                    <div class="col-2 col-sm-4"><a href="<?= $socialmedialink['link'] ?>"><img src="<?= $socialmedialink['imagepath'] ?>" alt="<?= $socialmedialink['socialmedia'] ?>"></a></div>
+                                    <div class="col-2 col-sm-4"><a href="<?= $socialmedialink['link'] ?>"><img src="<?= $socialmedialink['imagepath'] ?>" alt="<?= $socialmedialink['socialmedia'] ?>" target="_blank"></a></div>
                                 <?php }?>
                             <?php }?>
                         </div>

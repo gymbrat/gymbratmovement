@@ -28,6 +28,16 @@ a:hover {
     z-index: 100;
 }
 
+#side-list {
+    list-style-type: none;
+    width: 70%;
+    margin: auto;
+}
+
+#side-list li{
+    margin: 1em 0;
+}
+
 #side-text{
     white-space: nowrap;
     display: block;
@@ -100,10 +110,6 @@ a:hover {
 
 .navbar .navbar-brand img {
     width: 100px;
-}
-
-.navbar-collapse .border-end {
-    border-right: 1px solid #fff;
 }
 
 .cart-count {
@@ -728,30 +734,88 @@ footer .border-top{
     margin-top: 15px;
 }
 
-/*======Responsive CSS=======*/
-@media (max-width: 767px) {
-    .comments .commenter-name {
-        font-size: 13px;
-        top: -5px;
-    }
+/*==================================== SIGNUP =======================================*/
+.signup-form a, .signin a {
+    color: #e7a4f3;
+}
 
-    .comments .commenter-pic {
-        width: 40px;
-        height: 40px;
-    }
+.signup-form .input-group-prepend span, .login_btn {
+    background-color: #858aba !important;
+}
 
-    .comments .commenter-name a {
-        display: block;
-    }
+.signup-form .container, .signin .container  {
+    height: 100%;
+    align-content: center;
+}
 
-    .comments .commenter-name .comment-time {
-        display: block;
-        margin-left: 0px;
-    }
+.signup-form .card {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.social_icon span:hover, .signin .social_icon span:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.signup-form .card-header h3, .signup-form .remember, .signin .remember, .signup-form .links, .signin .links, .signin .card-header h3 {
+    color: white;
+}
+.signup-form .input-group-prepend span {
+    width: 170px;
+    background-color: #858aba;
+    color: black;
+    border: 0 !important;
+}
+
+.signup-form input:focus, .signin input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+
+}
+
+.signup-form .remember input, .signin .remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn, .signin .login_btn  {
+    color: black;
+    background-color: #858aba;
+    width: 100px;
+}
+
+.login_btn:hover, .signin .login_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.signup-form .links a, .signin .links a{
+    margin-left: 4px;
+}
+
+.signin .card {
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.signin .input-group-prepend span {
+    width: 50px;
+    background-color: #858aba;
+    color: black;
+    border: 0 !important;
 }
 
 
 /*==================================== MEDIA QUERIES ====================================*/
+/*======Responsive CSS=======*/
 
 @media only screen and (min-width:460px) {
     .hero-section .hero-button {
@@ -857,6 +921,27 @@ footer .border-top{
     }
 }
 
+@media (max-width: 767px) {
+    .comments .commenter-name {
+        font-size: 13px;
+        top: -5px;
+    }
+
+    .comments .commenter-pic {
+        width: 40px;
+        height: 40px;
+    }
+
+    .comments .commenter-name a {
+        display: block;
+    }
+
+    .comments .commenter-name .comment-time {
+        display: block;
+        margin-left: 0px;
+    }
+}
+
 @media only screen and (min-width:800px) {
 
     .hero-section {
@@ -879,6 +964,16 @@ footer .border-top{
 }
 
 @media only screen and (min-width:1000px) {
+
+    .navbar-nav {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar-collapse .border-end {
+        border-right: 1px solid #fff;
+    }
+
     .hero-section .hero-button {
         position: absolute;
         bottom: 5em;

@@ -13,7 +13,7 @@ include("header.php");
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-10 pl-5 pl-md-0 offset-1 offset-md-2 col-sm-6 col-md-4 col-lg-3">
-                            <div class="">
+                            <div class="hero-image">
                                 <a href="workout-guides.php" class="text-white"><button type="button" class="btn btn-outline-light hero-button">Get Started</button></a>
                                 <img src="./assets/hero-message.svg" alt="Reinvent Yourself" width="100%">
 
@@ -40,7 +40,7 @@ include("header.php");
     <section class="about-me" id="about">
         <div class="container-fluid">
             <div class="row text-center">
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 offset-2 offset-sm-1">
+                <div class="aboutme-image col-6 col-sm-4 col-md-3 col-lg-2 offset-2 offset-sm-1">
                     <img src="./assets/text-images/about-me.svg" alt="About Me" width="100%">
                 </div>
             </div>
@@ -55,7 +55,7 @@ include("header.php");
                                     <div class="post-slide">
                                         <div class="post-img">
                                             <img src="./assets/<?=  $about['image'] ?>" alt="">
-                                            <a href="<?=  $about['imagelink'] ?>" class="over-layer"><i class="fa fa-link"></i></a>
+                                            <a href="<?=  $about['imagelink'] ?>" class="over-layer" target="_blank"><i class="fa fa-link"></i></a>
                                         </div>
                                     </div>
                                 <?php }?>
@@ -192,9 +192,9 @@ include("header.php");
         <div class="row justify-content-md-center">
             <div class="col-sm-12 col-md-4 my-auto">
                 <h6>Lorem ipsum dolor sit amet</h6>
-                <img src="./assets/text-images/codes-sm.svg" alt="Merchandise" width="100%" class="left-images">
+                <img src="./assets/text-images/codes-sm.svg" alt="Codes & Social Media" width="100%" class="left-images">
                 <img src="./assets/graphics/buildings-sm.svg" alt="" width="100%" class="d-block d-md-none">
-                <a href="merchandise.php" class="text-white float-left"><button type="button" class="btn btn-outline-light">Find Out More!</button></a>
+                <a href="codes.php" class="text-white float-left"><button type="button" class="btn btn-outline-light">Find Out More!</button></a>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-6">
                 <img src="./assets/graphics/neon-sign.svg" alt="Neon Sign" width="100%" class="d-none d-md-block">

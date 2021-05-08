@@ -34,15 +34,18 @@
 </head>
 
 <body>
-<div class="side-menu text-center <?php if(!strpos($_SERVER['REQUEST_URI'], 'index')){?>d-none d-sm-block<?php }?>"> 
-    <a>
-        <img src="./assets/graphics/side-menu-bars.svg" alt="Menu Bars" class="pt-5">
-    </a>
+<div class="side-menu <?php if(!strpos($_SERVER['REQUEST_URI'], 'index')){?>d-none d-sm-block<?php }?>"> 
+    <div class="text-center">
+        <a href="javascript:void(0)"><img src="./assets/graphics/side-menu-bars.svg" alt="Menu Bars" class="pt-5"></a>
+    </div>
     <a href="#" id="side-text" class="text-white font-size-20">Workout Guides</a>
-    <?php foreach($workoutguides as $guides){?> 
-        <a href="workout-guides.php"><p class="text-white font-size-20 workout-plans" style="opacity:0"><?=  $guides['title'] ?></p></a>
-    <?php }?>
-    <a href="contact.php"><p class="text-white font-size-20 workout-plans" style="opacity:0">Contact</p></a>
+    <ul id="side-list">
+        <?php foreach($workoutguides as $guides){?> 
+            <li><a href="workout-guides.php" class="text-white font-size-20 workout-plans" style="opacity:0"><?=  $guides['title'] ?></a></li>
+        <?php }?>
+        <li><a href="contact.php" class="text-white font-size-20 workout-plans" style="opacity:0">Contact</a></li>
+    </ul>
+    
 </div>
 
     
@@ -84,10 +87,13 @@
                         <li class="nav-item" style="padding-top:.4em;">
                             <?php
                             if(isset($_SESSION['userName'])){
-                                echo '<a href="includes/logout.inc.php" class="py-3 px-4 mx-lg-4 border text-light nav-item">Logout</a>';
+                                echo '<a href="includes/logout.inc.php" class="py-3 px-4 mx-lg-4 border text-light nav-link d-none d-sm-none d-md-none d-lg-block">Logout</a>';
+                                echo '<a href="includes/logout.inc.php" class="nav-link d-block d-lg-none">Logout</a>';
                             }
                             else{
-                                echo '<a href="login.php" class="px-md-2 px-lg-3 px-xl-4 py-3 mx-md-2 mx-lg-0 mx-xl-4 border text-light nav-item">Login</a>';
+                                echo '<a href="login.php" class="py-3 px-4 mx-lg-4 border text-light nav-link d-none d-sm-none d-md-none d-lg-block">Login</a>';
+                                echo '<a href="login.php" class="nav-link d-block d-lg-none">Login</a>';
+                              
                             }
                             ?>
                         </li>

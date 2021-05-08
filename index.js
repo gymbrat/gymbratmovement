@@ -169,34 +169,55 @@ document.querySelector(".side-menu").addEventListener("click", animateIt);
 const tl = gsap.timeline();
 const tl2 = gsap.timeline();
 const tl3 = gsap.timeline();
+
 tl.to(".side-menu", {
-  width: '30%',
-  backgroundImage:'none',
-  backgroundColor:'black',
-  borderRight:"10px #FFFF solid",
-  ease:"power3.inOut"
+    width: '30%',
+    backgroundImage:'none',
+    backgroundColor:'black',
+    borderRight:"10px #FFFF solid",
+    ease:"slow(0.3, 2, true)"
 });
-tl2.to(".workout-plans", {
-  x:-50,
-  opacity: 1,
-  stagger: 0.1,
-  ease:"power3.inOut"
-},"-=.5");
-tl3.to("#side-text", {
-  opacity: 0
+tl.to(".workout-plans", {
+    x:-50,
+    opacity: 1,
+    stagger: 0.1,
+    ease:"slow(0.3, 2, true)"
 });
+
+tl2.to("#side-text", {
+    opacity: 0,
+    timeScale:1
+});
+
+tl3.to(".side-menu img", {
+  css: {position: "absolute",right: "3em"} 
+});
+
+
 tl.reversed(true);
 tl.duration(1);
 tl2.reversed(true);
-tl2.duration(2);
+tl2.duration(.1);
 tl3.reversed(true);
 tl3.duration(1);
+
 function animateIt() {
-  tl.reversed(!tl.reversed());
-  tl2.reversed(!tl2.reversed());
-  tl3.reversed(!tl3.reversed());
+    tl.reversed(!tl.reversed());
+    tl2.reversed(!tl2.reversed());
+    tl3.reversed(!tl3.reversed());
 }
 
-console.log('INIT');
+gsap.from('.hero-image', 1, {y:30, opacity: 0, delay: .5});
+//gsap.from('.nav-item a', .5, {opacity: 0, stagger: 0.2});
+gsap.from('.rightside img', 1, {opacity: 0, delay: 1.2});
 
 
+// let tl = gsap.timeline({
+//                 scrollTrigger: {
+//                     trigger: '.about-me',
+//                     start: 'top 80%'
+//                 }
+//         })
+// tl.from(".aboutme-image", {y:-200, opacity: 0, duration: 1.5})
+// .from(".left p:nth-child(1), .left p:nth-child(2)", {y: -50, opacity: 0, duration: 1}, "-=1")
+// .from(".left p:nth-child(3)", {y: 50, opacity: 0, duration: 1}, "-=.9")
