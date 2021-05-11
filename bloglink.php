@@ -17,19 +17,34 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     }
 }
 
+
+
+
 foreach ($blogs->getBlogs() as $blogs) :
     if ($blogs['blogId'] == $blog_id) :?>
+    <?php
+        $comments = array();
+        foreach ($blogComments as $blogcomment){
+            if($blogs['blogId'] == $blogcomment['blogId']){
+                $comments[] = $blogcomment['comment'];
+                $commentcount = count($comments);
+            }
+        }?>
+    
 
     <section class="blog-box">
-        <div class="container-fluid">
+        <div class="container-fluid border rounded">
             <div class="row">
                 <div class="col-md-8 col-lg-9 p-4">
-                    <img src="http://zoyothemes.com/blogezy/images/blog/blog-1.jpg" class="img-fluid rounded" >
-                    <div class="blog-title py-4 px-3">
+                    <div class="blog-title p-3">
                         <h2><?php echo $blogs['blogTitle'] ?? "Unknown"; ?></h2>
-                        <p class="mb-0 font-size-12"><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo  date('m-d-Y', strtotime($blogs['createdAt'])); ?></p>
                     </div>
-                    <div class="blog-content mt-5">
+                    <img src="<img src='assets/<?=  $blogpost['blogImage'] ?>" class="img-fluid rounded" >
+                    <div class="pt-3">
+                        <p class="mb-0 grey font-size-12 grey"><i class="fas fa-user"></i> Lexi Simoes<i class="fa fa-calendar ml-3" aria-hidden="true"></i> <?= date('m-d-Y', strtotime($blogs['createdAt'])); ?><i class="fas fa-comments ml-3"></i> <?= $commentcount?></p>
+                    </div>  
+                    
+                    <div class="blog-content mt-4">
                         <p class="font-size-16"><?php echo $blogs['content'] ?? "Unknown"; ?></p>
                         <div class="container">
                             <?php
@@ -46,8 +61,8 @@ foreach ($blogs->getBlogs() as $blogs) :
                                                             <input type="hidden" name="blog_id" value="<?= $blog_id ?>">
                                                             <input type="hidden" name="commenter_name" value="<?=  $_SESSION['userName'];?>">
                                                             <input type="text" placeholder="Add a public comment" name="comment">
-                                                            <button type="submit" class="btn btn-default" name="blog_comment_submit">Comment</button>
-                                                            <button type="cancel" class="btn btn-default">Cancel</button>
+                                                            <button type="submit" class="btn btn-gradient font-size-16" name="blog_comment_submit">Comment</button>
+                                                            <button type="cancel" class="btn btn-gradient font-size-16">Cancel</button>
                                                         </span>
                                                     </form>
                                                 </div>
@@ -59,12 +74,12 @@ foreach ($blogs->getBlogs() as $blogs) :
                                     echo '<div class="py-3 px-4 mx-lg-4 mb-5 border"><a href="login.php">Sign in or register to comment!</a></div>';
                                   }?> 
                         </div>
-                        <div class="comment-box">
+                        <div class="comment-box" id="comment-box">
                             <?php 
                             foreach ($blogComments as $blogComment){
                                 if($blogs['blogId'] == $blogComment['blogId']){
                                     echo '<form method="post">';
-                                    echo '<div class="comment-inline"><h6><b>'.$blogComment['commenter_name'].'</b></h6>&nbsp;<small>'.date('m-d-Y', strtotime($blogComment['comment_date'])).'</small></div>';
+                                    echo '<div class="comment-inline"><h6><b>'.$blogComment['commenter_name'].'</b></h6>&nbsp;<small class="grey">'.date('m-d-Y', strtotime($blogComment['comment_date'])).'</small></div>';
                                     echo '<p>'.$blogComment['comment'];
                                     if($_SESSION['userName'] !== $blogComment['commenter_name']){
                                         echo '</p>';
@@ -75,6 +90,7 @@ foreach ($blogs->getBlogs() as $blogs) :
                                     }
                                     echo '</form>';
                                 }
+                                
                             }
                             ?>
                         </div>
@@ -97,11 +113,6 @@ endif;
 endforeach;
 
 ?>
-<style>
-body{
-    background: #e1e6ed;
-}
-</style>
 <script>
 // Reply box popup JS
 $(document).ready(function(){

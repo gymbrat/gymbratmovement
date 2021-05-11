@@ -26,9 +26,9 @@ class WorkoutGuides
     }
     
     // create sql query           
-    public function addWorkoutGuides($title,$description,$price){
+    public function addWorkoutGuides($title,$description,$price, $guid){
 
-        $result = $this->db->con->query("INSERT INTO `workoutguides`(title,description,price) VALUES ('{$title}', '{$description}', '{$price}')");
+        $result = $this->db->con->query("INSERT INTO `workoutguides`(title,description,price,guid) VALUES ('{$title}', '{$description}', '{$price}', '{$guid}')");
 
         if($result){
             header("Location:" . $_SERVER['PHP_SELF']."?upload=success");
@@ -51,7 +51,7 @@ class WorkoutGuides
     }
 
     // create sql query           
-    public function updateWorkoutGuides($id,$title,$desc,$price){
+    public function updateWorkoutGuides($id,$title,$desc,$price,$guid){
 
         $updates = array();
         if (!empty($title))
@@ -60,6 +60,8 @@ class WorkoutGuides
             $updates[] = 'description="'.$desc.'"';
         if (!empty($price))
             $updates[] = 'price="'.$price.'"';
+        if (!empty($guid))
+            $updates[] = 'guid="'.$guid.'"';
         $updates = implode(', ', $updates);
 
         $result = $this->db->con->query("UPDATE `workoutguides` SET {$updates} WHERE id = '{$id}';");

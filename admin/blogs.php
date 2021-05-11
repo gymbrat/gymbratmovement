@@ -144,8 +144,8 @@ include("admin-header.php");
                                         <td name="buttons">
                                             <div class="container">
                                                 <!-- Trigger the modal with a button -->
-                                                <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal-<?php echo $thisBlog['blogId'] ?>"><i class="fas fa-edit"></i></button>
-                                                <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModalDelete-<?php echo $thisBlog['blogId'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal-<?= $thisBlog['blogId'] ?>"><i class="fas fa-edit"></i></button>
+                                                <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModalDelete-<?= $thisBlog['blogId'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                             </div>
                                             <!-- Modal -->
                                              <!-- Modal -->
@@ -200,7 +200,7 @@ include("admin-header.php");
                                                 </div>
                                             </div>
                                             <!-- Modal -->
-                                            <div class="modal fade" id="myModalDelete-<?php echo $thisBlog['blogId'] ?>" role="dialog">
+                                            <div class="modal fade" id="myModalDelete-<?= $thisBlog['blogId'] ?>" role="dialog">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                 <!-- Modal content-->
                                                 <div class="modal-content">
@@ -210,7 +210,7 @@ include("admin-header.php");
                                                     </div>
                                                     <div class="modal-body">
                                                         <form method="post">
-                                                            <input type="hidden" value="<?php echo $thisBlog['blogId'] ?? 0; ?>" name="blog_id">
+                                                            <input type="hidden" value="<?= $thisBlog['blogId'] ?? 0; ?>" name="blog_id">
                                                             Are you sure you want to delete?
                                                             <button type="submit" name="delete-blog-submit" class="btn font-baloo text-danger px-3 border-right">Delete</button>
                                                             <button type="submit" name="cancel" class="btn font-baloo text-danger px-3 border-right">Cancel</button>
@@ -251,9 +251,9 @@ include("admin-header.php");
                                     <th class="d-none d-sm-block">ID</th>
                                     <th>Blog Title</th>
                                     <th>Username</th>
-                                    <th class="d-none d-sm-block">Comment</th>
-                                    <th>Comment Date</th>
-                                    <th>Edit</th>
+                                    <th>Comment</th>
+                                    <th class="d-none d-sm-block">Comment Date</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -265,7 +265,7 @@ include("admin-header.php");
                                                 <td><?php  echo $thisBlog['blogTitle'];?></td>
                                                 <td><?= $thisComment['commenter_name'] ?></td>
                                                 <td><?= $thisComment['comment'] ?></td>
-                                                <td><?= $thisComment['comment_date'] ?></td>
+                                                <td class="d-none d-sm-block"><?= $thisComment['comment_date'] ?></td>
                                                 <td name="buttons">
                                                     <div class="container">
                                                         <!-- Trigger the modal with a button -->

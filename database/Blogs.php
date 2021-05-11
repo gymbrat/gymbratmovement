@@ -93,7 +93,7 @@ class Blog
     }
 
     // delete blog comment using comment id
-    public function deleteBlogComment($comment_id = null, $blog_id = null, $table = 'blogcomments'){
+    public function deleteBlogComment($comment_id = null, $table = 'blogcomments'){
         if($comment_id != null){
             $result = $this->db->con->query("DELETE FROM {$table} WHERE id={$comment_id}");
             if($result){

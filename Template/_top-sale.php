@@ -3,13 +3,13 @@
 
     shuffle($product_shuffle);
 
-    //request method post
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
-        //call method addToCart
-        if(isset($_POST['top_sale_submit'])){
-            $Cart->addToCart($_POST['user_id'],$_POST['item_id']);
-        }
-    }
+    // //request method post
+    // if($_SERVER['REQUEST_METHOD'] == "POST"){
+    //     //call method addToCart
+    //     if(isset($_POST['top_sale_submit'])){
+    //         $Cart->addToCart($_POST['user_id'],$_POST['item_id']);
+    //     }
+    // }
 
 ?>
 <section id="top-sale">
@@ -34,18 +34,15 @@
                         <div class="price py-2">
                             <span><b>$<?= $item['item_price']??"0";?></b></span>
                         </div>
-                        <form method="POST">
-                            <input type="hidden" name="item_id" value="<?= $item['item_id'] ?? '1';?>">
-                            <input type="hidden" name="user_id" value="<?= 2;?>">
-                            <?php 
-                                if(in_array($item['item_id'], $Cart->getCartId($product->getData('cart'))?? [])){
-                                    echo ' <button type="submit" disabled class="btn btn-gradient-success font-size-12">In the Cart</button>';
-                                }else{
-                                    echo ' <button type="submit" name="top_sale_submit" class="btn btn-gradient font-size-12">Add to Cart</button>';
-                                }
-                            ?>
-                           
-                        </form>
+                        <button class="snipcart-add-item btn btn-gradient font-size-16"
+                                    data-item-id="<?php echo $item['item_id'] ?? '1'; ?>"
+                                    data-item-price="<?php echo $item['item_price'] ?? 0 ?>"
+                                    data-item-url="<?= $_SERVER['PHP_SELF'] ?>"
+                                    data-item-description="<?php echo $item['item_brand'] ?? "Brand" ; ?>"
+                                    data-item-image="./assets<?php echo $item['item_image'] ?? "./assets/products/13.png"; ?>"
+                                    data-item-name="<?php echo $item['item_name'] ?? "Unknown"; ?>">
+                                    Add to cart
+                        </button>
                     </div>
                 </div>
             </div>

@@ -63,6 +63,12 @@ include("admin-header.php");
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
+                                    <label for="file_guide">File GUID</label>
+                                    <input type="text" class="form-control cus_input" id="file_guide" name="file_guide" value="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
                                     <label for="workout_description">Description</label>
                                     <textarea class="form-control" id="workout_description" name="workout_description" rows="8"></textarea>
                                 </div>
@@ -110,6 +116,7 @@ include("admin-header.php");
                                     <th>Title</th>
                                     <th class="d-none d-sm-block">Description</th>
                                     <th>Price</th>
+                                    <th class="d-none d-sm-block">GUID</th>
                                     <th>Edit</th>
                                 </tr>
                             </thead>
@@ -120,11 +127,12 @@ include("admin-header.php");
                                         <td><?= $thisGuide['title'] ?></td>
                                         <td class="d-none d-sm-block"><?= $thisGuide['description'] ?></td>
                                         <td>$<?= $thisGuide['price'] ?></td>
+                                        <td class="d-none d-sm-block"><?= $thisGuide['guid'] ?></td>
                                         <td name="buttons">
                                             <div class="container">
                                                 <!-- Trigger the modal with a button -->
-                                                <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal-<?= $thisGuide['id'] ?>"><i class="fas fa-edit"></i></button>
-                                                <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModalDelete-<?= $thisGuide['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                <button type="button" class="btn btn-info btn-md my-1 my-sm-0" data-toggle="modal" data-target="#myModal-<?= $thisGuide['id'] ?>"><i class="fas fa-edit"></i></button>
+                                                <button type="button" class="btn btn-info btn-md my-1 my-sm-0" data-toggle="modal" data-target="#myModalDelete-<?= $thisGuide['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                             </div>
                                             <!-- Modal -->
                                             <div class="modal fade" id="myModal-<?= $thisGuide['id'] ?>" role="dialog">
@@ -154,6 +162,10 @@ include("admin-header.php");
                                                                     <div class="col-md-12 mb-4">
                                                                         <label for="workout_price" class="col-form-label">Price: </label>
                                                                         <input type="text" class="form-control cus_input" id="workout_price" name="workout_price" placeholder="<?= $thisGuide['price'] ?>">
+                                                                    </div>
+                                                                     <div class="col-md-12 mb-4">
+                                                                        <label for="file_guid" class="col-form-label">File GUID: </label>
+                                                                        <input type="text" class="form-control cus_input" id="file_guid" name="file_guid" placeholder="<?= $thisGuide['guid'] ?>">
                                                                     </div>
                                                                     <div class="col-md-12 mb-3">
                                                                         <input type="submit" value="Update" name="workout_update_submit" class="form-control cus_input_btn text-danger">

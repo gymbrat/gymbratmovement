@@ -123,8 +123,8 @@ include("admin-header.php");
                                         <td name="buttons">
                                             <div class="container">
                                                 <!-- Trigger the modal with a button -->
-                                                <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal-<?= $thisCode['id'] ?>"><i class="fas fa-edit"></i></button>
-                                                <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModalDelete-<?= $thisCode['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                <button type="button" class="btn btn-info btn-md my-1 my-sm-0" data-toggle="modal" data-target="#myModal-<?= $thisCode['id'] ?>"><i class="fas fa-edit"></i></button>
+                                                <button type="button" class="btn btn-info btn-md my-1 my-sm-0" data-toggle="modal" data-target="#myModalDelete-<?= $thisCode['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                             </div>
                                             <!-- Modal -->
                                             <div class="modal fade" id="myModal-<?= $thisCode['id'] ?>" role="dialog">

@@ -109,7 +109,7 @@ include("admin-header.php");
                                 <th class="d-none d-sm-block">ID</th>
                                 <th>Brand</th>
                                 <th>Name</th>
-                                <th>Price</th>
+                                <th class="d-none d-sm-block">Price</th>
                                 <th>Image</th>
                                 <th class="d-none d-sm-block">Description</th>
                                 <th>Edit</th>
@@ -121,7 +121,7 @@ include("admin-header.php");
                                     <td class="d-none d-sm-block py-5"><?= $item['item_id'] ?></td>
                                     <td><?= $item['item_brand'] ?></td>
                                     <td><?= $item['item_name'] ?></td>
-                                    <td>$<?= $item['item_price'] ?></td>
+                                    <td class="d-none d-sm-block">$<?= $item['item_price'] ?></td>
                                     <td><img src="../assets<?= $item['item_image'] ?? "../assets/products/1.png";?>" alt="product1" class="img-fluid" width="100px"></td>
                                     <td class="d-none d-sm-block">
                                     <?php 
@@ -132,8 +132,8 @@ include("admin-header.php");
                                     <td name="buttons">
                                         <div class="container">
                                             <!-- Trigger the modal with a button -->
-                                            <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal-<?php echo $item['item_id'] ?>"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModalDelete-<?php echo $item['item_id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                            <button type="button" class="btn btn-info btn-md my-1 my-sm-0" data-toggle="modal" data-target="#myModal-<?php echo $item['item_id'] ?>"><i class="fas fa-edit"></i></button>
+                                            <button type="button" class="btn btn-info btn-md my-1 my-sm-0" data-toggle="modal" data-target="#myModalDelete-<?php echo $item['item_id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                         </div>
                                         <!-- Modal -->
                                         <div class="modal fade" id="myModal-<?php echo $item['item_id'] ?>" role="dialog">

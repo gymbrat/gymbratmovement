@@ -5,7 +5,7 @@
     sort($unique);
     shuffle($product_shuffle);
 
-// request method post
+/*request method post
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     if (isset($_POST['special_price_submit'])){
         // call method addToCart
@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 }
 
 $in_cart = $Cart->getCartId($product->getData('cart'));
-
+*/
 ?>
 <section id="special-price">
     <div class="container">

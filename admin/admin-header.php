@@ -82,11 +82,11 @@
         // ========================================== WORKOUT GUIDES ==========================================
         // New Code
         if (isset($_POST['new_workout_submit'])){
-            $workoutg->addWorkoutGuides($_POST['new_workout_title'],$_POST['workout_description'], $_POST['workout_price']);
+            $workoutg->addWorkoutGuides($_POST['new_workout_title'],$_POST['workout_description'], $_POST['workout_price'], $_POST['file_guide']);
         }
         // Update Code
         if (isset($_POST['workout_update_submit'])){
-             $workoutg->updateWorkoutGuides($_POST['workout_id'],$_POST['workout_title'],$_POST['workout_desc'],$_POST['workout_price']);
+             $workoutg->updateWorkoutGuides($_POST['workout_id'],$_POST['workout_title'],$_POST['workout_desc'],$_POST['workout_price'], $_POST['file_guid']);
         }
         // Delete Code
         if (isset($_POST['delete-guide-submit'])){
@@ -134,17 +134,22 @@
     <?php include("admin-sidebar.php"); ?>
     <section class="add-item">
         <div class="content">
-            <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark mb-5">
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark mb-5 py-3">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <a class="navbar-brand" href="#">The Gymbrat Movement - Admin Portal</a>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <a class="nav-link text-white d-block d-sm-none" href="admin-portal.php">Home</a>
+                        <a class="nav-link text-white d-block d-sm-none" href="aboutme.php">About Me</a>
+                        <a class="nav-link text-white d-block d-sm-none" href="workout-guides.php">Workout Guides</a>
+                        <a class="nav-link text-white d-block d-sm-none" href="codes.php">Codes & Social Media</a>
+                        <a class="nav-link text-white d-block d-sm-none" href="items.php">Merchandise</a>
+                        <a class="nav-link text-white d-block d-sm-none" href="blogs.php">Blogs</a>
+                        <a class="nav-link text-white d-block d-sm-none" href="users.php">Users</a>
+                        <a class="nav-link text-white d-block d-sm-none" href="socialmedia.php">Social Media Links</a>
+                        <a class="nav-link text-white d-block d-sm-none" href="../index.php" target="_blank">Live Site</a>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2 mb-0" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success  my-sm-0" type="submit">Search</button>
-                    </form>
                 </div>
             </nav>

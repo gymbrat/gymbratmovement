@@ -59,7 +59,7 @@ a:hover {
 }
 
 .font-size-14 {
-    font-size: 14x;
+    font-size: 14px;
 }
 
 .font-size-16 {
@@ -101,6 +101,10 @@ a:hover {
 }
 .bg-black{
     background-color: black;
+}
+
+.grey{
+    color: #8a8a8a;
 }
 
 /*==================================== NAVBAR ====================================*/
@@ -523,7 +527,7 @@ footer .border-top{
     letter-spacing: 0px;
 }
 
-.codes .btn, .merch .btn-gradient, .btn-gradient-success, .product .btn-gradient, .snipcart-add-item{
+.codes .btn, .merch .btn-gradient, .btn-gradient-success, .product .btn-gradient, .snipcart-add-item, .commenter-name .btn-gradient, .blog-box .btn-gradient{
     text-transform: uppercase;
     font-size: 0.75rem;
     font-weight: 500;
@@ -533,12 +537,12 @@ footer .border-top{
     letter-spacing: 1px;
 }
 
-.codes .btn-gradient, .merch .btn-gradient, .product .btn-gradient,  .snipcart-add-item {
+.codes .btn-gradient, .merch .btn-gradient, .product .btn-gradient,  .snipcart-add-item{
     background-color: #f2f2f2;
     transition: background 0.3s ease-in-out;
 }
 
-.codes .btn-gradient:hover,.merch .btn-gradient:hover, .btn-gradient-success:hover, .product .btn-gradient:hover, .snipcart-add-item:hover {
+.codes .btn-gradient:hover,.merch .btn-gradient:hover, .btn-gradient-success:hover, .product .btn-gradient:hover, .snipcart-add-item:hover{
     color: white;
     background-color: #57e2b2;
 }
@@ -568,9 +572,7 @@ footer .border-top{
 
 .blog-title {
     background: #f0f4f7;
-    margin-top: -60px;
     position: relative;
-    width: 80%;
     -webkit-box-shadow: 0 10px 6px -6px #777;
     -moz-box-shadow: 0 10px 6px -6px #777;
     box-shadow: 0 10px 6px -6px #777;
@@ -578,7 +580,6 @@ footer .border-top{
 
 .blog-content p {
     line-height: 27px;
-    margin: 0 0 2em 1em;
     word-break: break-word;
     -ms-word-wrap: break-word;
 }
@@ -676,12 +677,12 @@ footer .border-top{
 }
 
 .comments .add-comment input:focus {
-    border-color: #03a9f4;
+    border-color: #858aba;
     border-width: 2px;
 }
 
-.comments .add-comment button[type=submit] {
-    background-color: #03a9f4;
+.comments .add-comment button[type=submit]{
+    background-color: #858aba;
     color: #fff;
     margin-right: 0px;
 }
@@ -733,6 +734,7 @@ footer .border-top{
     float: right;
     margin-top: 15px;
 }
+
 
 /*==================================== SIGNUP =======================================*/
 .signup-form a, .signin a {

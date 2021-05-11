@@ -104,7 +104,7 @@ include("admin-header.php");
                                     <th>Heading</th>
                                     <th>Content</th>
                                     <th>Images</th>
-                                    <th>Links</th>
+                                    <th class="d-none d-sm-block">Links</th>
                                     <th>Edit</th>
                                 </tr>
                             </thead>
@@ -124,9 +124,9 @@ include("admin-header.php");
                                         <td name="buttons">
                                             <div class="container">
                                                 <!-- Trigger the modal with a button -->
-                                                <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal-<?= $about['id'] ?>"><i class="fas fa-edit"></i></button>
+                                                <button type="button" class="btn btn-info btn-md my-1 my-sm-0" data-toggle="modal" data-target="#myModal-<?= $about['id'] ?>"><i class="fas fa-edit"></i></button>
                                                 <?php if($about['id'] !== '1'){?>
-                                                    <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModalDelete-<?= $about['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                    <button type="button" class="btn btn-info btn-md my-1 my-sm-0" data-toggle="modal" data-target="#myModalDelete-<?= $about['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                                 <?php }?>
                                             </div>
                                             <!-- Modal -->

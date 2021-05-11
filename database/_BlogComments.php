@@ -62,7 +62,7 @@ class BlogComments
             $result = $this->insertIntoBlogComments($params);
             if ($result){
                 // Reload Page
-                header("Location: " . $_SERVER['PHP_SELF']."?blog_id=".$blogId);
+                header("Location: " . $_SERVER['PHP_SELF']."?blog_id=".$blogId."#comment-box");
             }
         }
     }

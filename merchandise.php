@@ -13,9 +13,6 @@ include('Template/_special-price.php');
 include('Template/_top-sale.php');
 /* include top sale area*/ 
 
-/* include banner ads area*/ 
-//include('Template/_banner-ads.php');
-/* include banner ads area*/ 
 
 // include footer.php
 include('footer.php')
